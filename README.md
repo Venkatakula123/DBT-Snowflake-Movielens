@@ -7,6 +7,7 @@ This project demonstrates an end-to-end modern analytics workflow using Snowflak
 The goal is to design a structured analytics environment by:
 
 - Setting up Snowflake infrastructure (roles, warehouses, database, schemas, storage integration)
+- Implement role-based access control (RBAC)
 - Building a dimensional data model using dbt
 - Applying testing, snapshots, and modular transformation logic
 - Implementing best practices for analytics engineering
