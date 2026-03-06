@@ -1,6 +1,5 @@
 WITH GENOME_TAGS_RAW AS (
-    SELECT * FROM 
-    MOVIELENS.RAW.raw_genome_tags
+    SELECT * FROM {{source('movies','RAW_GENOME_TAGS')}}
 )
 
 SELECT 
