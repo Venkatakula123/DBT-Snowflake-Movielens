@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table',
+        schema = 'STAGING'
+    )
+}}
 WITH raw_links AS (
   SELECT * FROM {{source('movies','RAW_LINKS')}}
 )

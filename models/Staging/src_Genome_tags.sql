@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        schema = 'STAGING'
+    )
+}}
+
 WITH GENOME_TAGS_RAW AS (
     SELECT * FROM {{source('movies','RAW_GENOME_TAGS')}}
 )

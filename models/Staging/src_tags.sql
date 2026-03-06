@@ -1,4 +1,4 @@
-{{ config(materialized = 'table') }}
+{{ config(materialized = 'table', schema = 'STAGING') }}
 WITH raw_tags AS (
   SELECT * FROM {{source('movies','RAW_TAGS')}}
 )
