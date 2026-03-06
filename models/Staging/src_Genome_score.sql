@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        schema = 'STAGING'
+    )
+}}
+
 WITH Genome_Scores_Raw as (
     SELECT * FROM {{source('movies','RAW_GENOME_SCORES')}}
 )

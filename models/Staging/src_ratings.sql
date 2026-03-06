@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table',
+        schema = 'STAGING'
+    )
+}}
 WITH raw_ratings AS (
   SELECT * FROM {{source('movies','RAW_RATINGS')}}
 )
