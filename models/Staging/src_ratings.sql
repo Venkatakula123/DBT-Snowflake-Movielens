@@ -1,5 +1,5 @@
 WITH raw_ratings AS (
-  SELECT * FROM MOVIELENS.RAW.RAW_RATINGS
+  SELECT * FROM {{source('movies','RAW_RATINGS')}}
 )
 
 SELECT

@@ -1,5 +1,5 @@
 WITH Genome_Scores_Raw as (
-    SELECT * FROM MOVIELENS.RAW.raw_genome_scores
+    SELECT * FROM {{source('movies','RAW_GENOME_SCORES')}}
 )
 SELECT
     movieId as movie_id,
