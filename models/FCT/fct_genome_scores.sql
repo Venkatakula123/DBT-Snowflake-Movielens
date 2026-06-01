@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table',
+        schema = 'fact'
+    )
+}}
 WITH src_scores AS (
     SELECT * FROM {{ ref('src_Genome_score') }}
 )

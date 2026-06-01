@@ -37,6 +37,3 @@ models:
       +materialized: table 
     FCT:
       +materialized: table
-    
-
-

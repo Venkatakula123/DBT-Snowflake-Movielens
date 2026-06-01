@@ -1,4 +1,4 @@
-{{ config(materialized = 'table') }}
+{{ config(materialized = 'table', schema = 'Marts') }}
 
 WITH fct_ratings AS (
     SELECT * FROM {{ ref('fct_ratings') }}

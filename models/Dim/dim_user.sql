@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table',
+        schema = 'dim'
+    )
+}}
 WITH ratings AS (
   SELECT DISTINCT user_id FROM {{ ref('src_ratings') }}
 ),

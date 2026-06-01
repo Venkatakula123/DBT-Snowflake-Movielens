@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table',
+        schema = 'dim'
+    )
+}}
 WITH src_tags AS (
     SELECT * FROM {{ ref('src_Genome_tags') }}
 )
