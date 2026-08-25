@@ -1,0 +1,5 @@
+seeds:
+  - name: accounts
+    config: 
+      column_types:
+        ac_id: number

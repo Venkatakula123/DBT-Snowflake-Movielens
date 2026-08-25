@@ -1,6 +1,7 @@
-/* {{
+{{
     config(
-        materialized = 'ephemeral'
+        materialized = 'table',
+        schema = 'dim'
     )
 }}
 
@@ -17,9 +18,9 @@ scores AS (
 SELECT
     m.movie_id,
     m.movie_title,
-    m.genres,
+    m.genre,
     t.tag_name,
     s.relevance_score
 FROM movies m
 LEFT JOIN scores s ON m.movie_id = s.movie_id
-LEFT JOIN tags t ON t.tag_id = s.tag_id  */
+LEFT JOIN tags t ON t.tag_id = s.tag_id

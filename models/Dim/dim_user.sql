@@ -1,3 +1,11 @@
+{{
+    config(
+        materialized='table',
+        schema = 'dim',
+        pre_hook = ["INSERT INTO movielens.audit.model_runs (model_name, run_type, run_timestamp) VALUES ('{{ this }}', 'start', CURRENT_TIMESTAMP)"],
+        post_hook = ["INSERT INTO movielens.audit.model_runs (model_name, run_type, run_timestamp) VALUES ('{{ this }}', 'end', CURRENT_TIMESTAMP)"]
+    )
+}}
 WITH ratings AS (
   SELECT DISTINCT user_id FROM {{ ref('src_ratings') }}
 ),
