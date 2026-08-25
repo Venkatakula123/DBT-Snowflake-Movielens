@@ -29,6 +29,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+on-run-start: "{{ log_start_time(this) }}"
+
 models:
   PatrickDBT:    
     +materialized: view
@@ -37,3 +39,11 @@ models:
       +materialized: table 
     FCT:
       +materialized: table
+    Staging:
+      +pre_hook: "{{ log_start_time(this) }}"
+      +post_hook: "{{ log_end_time(this) }}"
+
+  on-run-start: "{{ log_start_time(this) }}"
+  on_run_end: "{{ log_end_time(this) }}"
+
+on_run_end: "{{ log_end_time(this) }}"

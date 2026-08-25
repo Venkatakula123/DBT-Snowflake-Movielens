@@ -1,7 +1,9 @@
 {{
     config(
         materialized='table',
-        schema = 'dim'
+        schema = 'dim',
+        pre_hook = [log_start_time(this)],
+        post_hook = [log_end_time(this)]
     )
 }}
 WITH src_movies AS (
